@@ -1,0 +1,10 @@
+.cartImg img{
+    display:flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    height:30px;
+    width: 30px;
+    background-color: beige;
+    border-radius: 5px;
+    border:solid black ;
+}

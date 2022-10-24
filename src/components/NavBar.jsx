@@ -1,12 +1,16 @@
 import React from "react";
-import button from "./Button/Button"
+import Button from "./Button/Button"
+import CardWidget from "./CartWidget/CartWidget";
 
 function NavBar (){
 return (
     <>
-    <h3> PhoneGang </h3>
+    <CardWidget></CardWidget>
+    <div>
+    <h3 className="m-4"> PhoneGang </h3>
     <button className="btn"> Inicio </button>
     <button className="btn"> Productos </button>
+    </div>
     </>
 )
 }

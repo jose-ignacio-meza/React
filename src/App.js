@@ -10,8 +10,8 @@ function App() {
     <header>
       <NavBar/>
     </header>
-    <div>
-      <ItemListContainer/>
+    <div className='container d-flex aling-center' >
+      <ItemListContainer>Bienvenido a Phone Gang</ItemListContainer>
     </div>
     </div>
 

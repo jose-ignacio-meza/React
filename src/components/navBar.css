@@ -1,0 +1,11 @@
+.navBarSize{
+    width: 500px;
+    height: auto;
+}
+.flexing{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    align-content: center;
+}

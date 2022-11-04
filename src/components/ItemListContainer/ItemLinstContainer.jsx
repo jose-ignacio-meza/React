@@ -1,18 +1,17 @@
 import React, { useState, useEffect } from "react";
-import Item from "../Item/Item";
+import ItemList from "./ItemList";
 import getItemsFromAPI from "../../mockService/mockService";
 
+function ItemListContainer() {
+  const [productsList, setProductsList] = useState([]);
 
-function ItemlistContainer (props){
-    const [productsList, setProductsList] = useState([]);
   useEffect(() => {
+    getItemsFromAPI().then((itemsDB) => {
+      setProductsList(itemsDB);
+    });
+  }, []);
 
-        getItemsFromAPI().then((itemsDB) => {
-            setProductsList(itemsDB);
-        });
-    }, []);
-
-  return <Item productsList={productsList} />;
+  return <ItemList productsList={productsList} />;
 }
 
-export default ItemlistContainer;
+export default ItemListContainer;

@@ -2,7 +2,7 @@ import React from "react"
 import "./itemDetail.css"
 
 function ItemDetail (props){
-return
+return(
     <div className="card-detail">
         <div className="card-detail_img">
           <img src={props.productDetail.thumbnail} alt="Product img" />
@@ -12,6 +12,6 @@ return
           <p>{props.productDetail.description}</p>
           <h4 className="priceTag">$ {props.productDetail.price}</h4>
         </div>
-    </div>   
-}
+    </div>
+  )}
  export default ItemDetail ;

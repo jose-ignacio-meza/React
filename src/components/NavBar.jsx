@@ -14,8 +14,8 @@ return (
             <Link to="/">
                 <h3> Inicio </h3> 
             </Link>
-            <Link to="/detail"> 
-                <h3> Productos </h3> 
+            <Link to="/category/smartphones"> 
+                <h3> SmarthPhones </h3> 
             </Link>
             <CardWidget className="m-4"></CardWidget>
         </div>

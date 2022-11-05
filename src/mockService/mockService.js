@@ -109,3 +109,13 @@ export function getSingleItemFromAPI(id) {
       }, 1000);
     });
   }
+
+export function getItemByCategoryFromAPI(category){
+     return new Promise ((resolve, reject) => {
+      setTimeout(()=> {
+        let categoryRequest = itemsDB.filter(
+          (item ) => category === item.category )
+        resolve(categoryRequest);
+      },1000 )
+     } ) 
+  }

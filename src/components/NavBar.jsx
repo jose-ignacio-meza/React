@@ -11,8 +11,8 @@ return (
              <h3 className="m-4"> PhoneGang </h3>
             </Link>
 
-            <Link to="/">
-                <h3> Inicio </h3> 
+            <Link to="/category/laptops">
+                <h3> laptops </h3> 
             </Link>
             <Link to="/category/smartphones"> 
                 <h3> SmarthPhones </h3> 

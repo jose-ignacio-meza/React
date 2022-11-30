@@ -1,0 +1,9 @@
+.counterStyle{
+    display: flex;
+    justify-content: center;
+    border: solid 1px black;
+}
+
+.cantidad{
+    padding: 5px;
+}

@@ -1,4 +1,5 @@
 import React, { useState, useContext } from "react"
+import { Link } from "react-router-dom";
 import "./itemDetail.css"
 import CartCounter from "../CartCounter/CartCounter";
 import cartContext from "../../storage/context";
@@ -12,6 +13,8 @@ function ItemDetail (props){
   ...props,
   cant}
   agregarAlCarro(itemParaCarro)
+
+  setExiste(true)
   }
 return(
     <div className="card-detail">
@@ -23,15 +26,16 @@ return(
           <p>{props.productDetail.description}</p>
           <h4 className="priceTag">$ {props.productDetail.price}</h4>
         </div>
-        {!existe ? (
+        {!existe? (
         <CartCounter
           paraAgregarAlCarro={paraAgregarAlCarro}
           stock={props.productDetail.stock}
         />
       ) : (
         <div>
-          <button>Ir al Carrito</button>
-          <button>Volver al catálogo</button>
+          
+          <Link to="/cart"> <button> Ir al Carrito      </button> </Link>
+          <Link t="/">      <button> Volver al catálogo </button> </Link>
           <button>Quitar del carrito</button>
         </div>
       )}

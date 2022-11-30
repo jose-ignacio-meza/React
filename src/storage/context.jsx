@@ -20,10 +20,9 @@ export function CartContextProvider (props){
             });
             setCarro(nuevoCarro)
         }else {
-            setCarro((nuevoCarro)=>{
-            nuevoCarro.push(itemParaCarro);
-            return nuevoCarro;
-            });
+            const nuevoCarro = [...carro]
+            nuevoCarro.push(itemParaCarro)
+            setCarro(nuevoCarro)
         }
      
 
@@ -38,6 +37,7 @@ export function CartContextProvider (props){
         return total;
     }
     const value = {
+        carro,
         agregarAlCarro,
         totalItemsEnCarro
       };

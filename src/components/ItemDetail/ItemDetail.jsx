@@ -6,15 +6,21 @@ import cartContext from "../../storage/context";
 
 function ItemDetail (props){
   const [existe, setExiste] = useState(false);
-  const { agregarAlCarro } = useContext(cartContext)
+  const { carro,agregarAlCarro } = useContext(cartContext)
   
-  function paraAgregarAlCarro(cant){
-  const itemParaCarro={
-  ...props,
-  cant}
-  agregarAlCarro(itemParaCarro)
+  let productoEnCarro = carro.find((producto)=>producto.id = props.productDetail.id)
+  let stock = props.productDetail.stock;
+  if(productoEnCarro) stock -= productoEnCarro.cant;
 
-  setExiste(true)
+
+  function paraAgregarAlCarro(cant){
+
+    const itemParaCarro={
+    ...props,
+    cant}
+    agregarAlCarro(itemParaCarro)
+    setExiste(true)
+
   }
 return(
     <div className="card-detail">
@@ -29,16 +35,15 @@ return(
         {!existe? (
         <CartCounter
           paraAgregarAlCarro={paraAgregarAlCarro}
-          stock={props.productDetail.stock}
+          stock={stock}
         />
-      ) : (
+        ) : (
         <div>
           
           <Link to="/cart"> <button> Ir al Carrito      </button> </Link>
-          <Link t="/">      <button> Volver al catálogo </button> </Link>
-          <button>Quitar del carrito</button>
+          <Link to="/">     <button> Volver al catálogo </button> </Link>
         </div>
-      )}
+        )}
     </div>
   )}
  export default ItemDetail ;

@@ -7,8 +7,7 @@ export function CartContextProvider (props){
     const [carro, setCarro]=useState([])
 
     function agregarAlCarro(itemParaCarro){
-        let itemBuscado = carro.find((itemActual)=> itemActual.id === itemParaCarro.id)
-        console.log(itemBuscado)
+        let itemBuscado = carro.find((itemActual)=> itemActual.productDetail.id === itemParaCarro.productDetail.id)
         if (itemBuscado) {
             let nuevoCarro = carro.map((itemEnCarro)=>{
             if (itemEnCarro.ID === itemParaCarro.id){
@@ -24,22 +23,40 @@ export function CartContextProvider (props){
             nuevoCarro.push(itemParaCarro)
             setCarro(nuevoCarro)
         }
-     
-
     }
 
     function totalItemsEnCarro(){
         let total = 0 ;
         carro.forEach(itemEnCarro => {
-            console.log(itemEnCarro)
             total = total + itemEnCarro.cant;
         });
         return total;
     }
+
+    function totalPrecioCarro (){
+        let total = 0 ;
+        carro.forEach(item =>{
+            total = total + (item.productDetail.price * item.cant);
+    })
+      return total;
+    }
+    
+    function eliminarItemCarro(id){
+        const nuevoCarro = carro.filter((item) => item.productDetail.id !== id )
+        setCarro(nuevoCarro) 
+    }
+    
+    function vaciarCarro(){
+        setCarro([]);
+    }
+
     const value = {
         carro,
         agregarAlCarro,
-        totalItemsEnCarro
+        totalItemsEnCarro,
+        totalPrecioCarro,
+        eliminarItemCarro,
+        vaciarCarro
       };
 return (
     <cartContext.Provider value={value}> {props.children} </cartContext.Provider>

@@ -9,6 +9,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ItemlistContainer from './components/ItemListContainer/ItemLinstContainer';
 import CartView from './components/CartView/CartView';
 
+import {cargaDeDatos, getSingleItemFromAPI} from './database/firebase'
+
 function App() {
   return (
     <div className="App">

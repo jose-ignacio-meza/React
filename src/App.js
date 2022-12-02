@@ -20,7 +20,9 @@ function App() {
             <Route path='/' element={<ItemlistContainer/>} />
             <Route path='/cart' element={<CartView/>} />
             <Route path="/category/:category" element={<ItemlistContainer/>}/>
-            <Route path='/detail/:id' element={<ItemDetailContainer/>}/>            
+            <Route path='/detail/:id' element={<ItemDetailContainer/>}/> 
+            <Route path="/checkout/:orderid" element={<h1>Gracias por tu compra</h1>}/>   
+            <Route path="*" element={<h1>404: Ruta no encontrada</h1>} />        
           </Routes>
         </BrowserRouter>
       </CartContextProvider>

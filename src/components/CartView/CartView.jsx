@@ -1,12 +1,14 @@
 import React, {useContext} from "react";
 import cartContext from "../../storage/context"
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { crerateBuyOrderFirestore } from "../../database/firebase";
 import swal from'sweetalert2';
 import OrdenDeCompra from "./OrdenDeCompra";
+
 function CartView (){
   const {carro,totalPrecioCarro,eliminarItemCarro,vaciarCarro} = useContext(cartContext)
-
+  const navigate = useNavigate();
   if (carro.length === 0)
   return <>
           <h3>Carrito Vacio</h3>
@@ -29,6 +31,7 @@ function CartView (){
         text:  `Tu compra tiene el id : ${respuesta}`,
         icon:  'success',
       });
+      navigate(`/checkout/${respuesta}`);
     });
     
   };  

@@ -8,14 +8,20 @@ return (
     <>
         <div className="flexing navBarMenu">    
             <Link to="/">
-             <h3 className="m-4"> PhoneGang </h3>
+             <h3 className="m-4"> StreetFire </h3>
             </Link>
 
-            <Link to="/category/laptops">
-                <h3> laptops </h3> 
+            <Link to="/category/trucks">
+                <h2> trucks </h2> 
             </Link>
-            <Link to="/category/smartphones"> 
-                <h3> SmarthPhones </h3> 
+            <Link to="/category/tabla"> 
+                <h2> tabla </h2> 
+            </Link>
+            <Link to="/category/skate"> 
+                <h2> skate </h2> 
+            </Link>
+            <Link to="/category/lija"> 
+                <h2> lija </h2> 
             </Link>
             <CartWidget className="m-4"></CartWidget>
         </div>

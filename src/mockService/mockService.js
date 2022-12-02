@@ -1,12 +1,12 @@
 const itemsDB = [
     {
       id: 1,
-      title: "iPhone 9",
-      price: 649,
-      stock: 2,
-      category: "smartphones",
-      thumbnail: "https://dummyjson.com/image/i/products/1/thumbnail.jpg",
-      description: "An apple mobile which is nothing like apple",
+      title: "skate lab",
+      price: 50000,
+      stock: 7,
+      category: "skate",
+      thumbnail: "./skate1.png",
+      description: "Un skate completo de la marca Labs",
     },
     {
       id: 2,

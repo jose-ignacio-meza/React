@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import './components/NavBar';
 import NavBar from './components/NavBar';
@@ -9,7 +8,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ItemlistContainer from './components/ItemListContainer/ItemLinstContainer';
 import CartView from './components/CartView/CartView';
 
-import {cargaDeDatos, getSingleItemFromAPI} from './database/firebase'
+import {cargaDeDatos} from './database/firebase'
 
 function App() {
   return (

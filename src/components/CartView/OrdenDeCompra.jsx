@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import FormularioInput from "./FormularioInput";
 
 
-export function OrdenDeCompra(){
+export function OrdenDeCompra(props){
     const [datosUsuario, setDatosUsuario]= useState ({
         nombre:"",
         telefono:"",
@@ -17,12 +17,11 @@ export function OrdenDeCompra(){
         setDatosUsuario(nuevaDataUsuario);
     }
 
-    function onSubmit(evt,props) {
+    function onSubmit(evt) {
         evt.preventDefault();
         console.log(props)
         props.onSubmit(datosUsuario);
     }
-
 
     return (
         <form onSubmit={onSubmit}>

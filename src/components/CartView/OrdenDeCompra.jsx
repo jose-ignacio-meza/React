@@ -1,28 +1,25 @@
 import React, {useState} from "react";
-import { propTypes } from "react-bootstrap/esm/Image";
 import FormularioInput from "./FormularioInput";
 
 
 export function OrdenDeCompra(){
-    const [datosUsuario, setDatosUsuartio]= useState ({
+    const [datosUsuario, setDatosUsuario]= useState ({
         nombre:"",
         telefono:"",
         email:""
     });
 
-    console.log(datosUsuario);
-
     function onInputChange(evt){
         const nombreInput = evt.target.name;
         const valorInput = evt.target.value;
-        console.log(nombreInput)
         const nuevaDataUsuario = {...datosUsuario};
         nuevaDataUsuario[nombreInput] = valorInput;
-        setDatosUsuartio(nuevaDataUsuario);
+        setDatosUsuario(nuevaDataUsuario);
     }
 
-    function onSubmit(props,evt) {
+    function onSubmit(evt,props) {
         evt.preventDefault();
+        console.log(props)
         props.onSubmit(datosUsuario);
     }
 
